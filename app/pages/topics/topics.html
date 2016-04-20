@@ -1,0 +1,51 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Ionic 中文论坛</ion-title>
+  <ion-buttons end>
+    <button (click)="goTo()">
+      <ion-icon name="contact"></ion-icon>
+      <ion-badge *ngIf="badge>0" danger item-right>{{badge}}</ion-badge>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+<button (click)="addTopic()" fab secondary fab-bottom fab-right style="z-index: 999">
+  <ion-icon name='add'></ion-icon>
+</button>
+<ion-content>
+  <ion-refresher (refresh)="doRefresh($event)">
+    <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="正在加载...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <a ion-item href="#/topicDetail/{{topic.id}}" *ngFor="#topic of topics">
+      <ion-avatar item-left>
+        <img src="{{topic.author.avatar_url|avatarPipe}}">
+      </ion-avatar>
+      <h2>{{topic.title}}</h2>
+
+      <h3 *ngIf="!topic.top&&!topic.good" style="margin-top: 8px"
+          class="put_normal tab">{{topic.tab|tabNamePipe}}</h3>
+
+      <h3 *ngIf="topic.top" style="margin-top: 8px"
+          class="put_top tab">置顶</h3>
+
+      <h3 *ngIf="topic.good && !topic.top" style="margin-top: 8px"
+          class="put_good tab">精华</h3>
+
+      <h3 class="loginname" style="margin: 10px 0px 0px 8px">
+        {{topic.author.loginname}}</h3>
+
+      <h3 class="agotime" style="margin-top: 10px">{{topic.last_reply_at|amTimeAgo}}</h3>
+    </a>
+  </ion-list>
+  <ion-infinite-scroll (infinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                 loadingText="正在加载..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

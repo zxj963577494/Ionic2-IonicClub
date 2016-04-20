@@ -1,0 +1,52 @@
+<ion-toolbar>
+  <ion-title>
+    消息
+  </ion-title>
+  <ion-buttons end>
+    <button (click)="dismiss()">
+      <span primary showWhen="ios">关闭</span>
+      <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="has-header">
+  <ion-list>
+    <ion-list-header>
+      未读消息
+    </ion-list-header>
+    <div *ngIf="myMessages.hasnot_read_messages.length==0" button block light>暂无未读消息</div>
+    <ion-item text-wrap *ngFor="#message of myMessages.hasnot_read_messages">
+      <p *ngIf="message.type == 'reply'">
+        <a href="#/user/{{message.author.loginname}}">{{message.topic.loginname}}</a>
+        回复了你的话题
+        <a href="#/topicDetail/{{message.topic.id}}">{{message.topic.title}}</a>
+      </p>
+
+      <p *ngIf="message.type == 'at'">
+        <a href="#/user/{{message.author.loginname}}">{{message.topic.loginname}}</a>
+        在话题
+        <a href="#/topicDetail/{{message.topic.id}}">{{message.topic.title}}</a>
+        中@了你
+      </p>
+    </ion-item>
+    <ion-list-header>
+      已读消息
+    </ion-list-header>
+    <div *ngIf="myMessages.has_read_messages.length==0" button block light>暂无已读消息</div>
+    <ion-item *ngFor="#message of myMessages.has_read_messages">
+      <p *ngIf="message.type == 'reply'">
+        <a href="#/user/{{message.author.loginname}}">{{message.topic.loginname}}</a>
+        回复了你的话题
+        <a href="#/topicDetail/{{message.topic.id}}">{{message.topic.title}}</a>
+      </p>
+
+      <p *ngIf="message.type == 'at'">
+        <a href="#/user/{{message.author.loginname}}">{{message.topic.loginname}}</a>
+        在话题
+        <a href="#/topicDetail/{{message.topic.id}}">{{message.topic.title}}</a>
+        中@了你
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>

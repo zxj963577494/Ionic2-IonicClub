@@ -1,0 +1,49 @@
+.tab {
+  float: left;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+}
+
+.loginname {
+  float: left;
+  color: #cccccc;
+}
+
+.agotime {
+  float: right;
+  color: #cccccc;
+}
+
+.put_good {
+  background: #3374de;
+  color: #fff;
+}
+
+.put_top {
+  background: #f53d3d;
+  color: #fff;
+}
+
+.put_normal{
+  background: #e5e5e5;
+  color: #999;
+}
+
+.reply {
+  float: right;
+}
+
+.reply .button {
+  border-radius: 10px;
+}
+
+.reply .button.icon:before {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+}

@@ -1,0 +1,88 @@
+<ion-navbar *navbar>
+  <ion-title>Ionic 中文论坛</ion-title>
+  <ion-buttons end>
+    <button (click)="share()" royal>
+      <ion-icon name="share-alt"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+<ion-content>
+  <div id="topicContent">
+    <ion-card>
+      <ion-item>
+        <ion-avatar item-left>
+          <a href="#/user/{{topicDetail.author.loginname}}">
+            <img
+                src="{{topicDetail.author.avatar_url|avatarPipe}}">
+          </a>
+        </ion-avatar>
+        <h2>{{topicDetail.author.loginname}}</h2>
+        <p>发布 <span>{{topicDetail.create_at|amTimeAgo}}</span> 最后回复 <span>{{topicDetail.last_reply_at|amTimeAgo}}</span></p>
+      </ion-item>
+      <ion-card-content>
+        <div [innerHTML]="topicDetail.content| linkPipe"></div>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='trending-up'></ion-icon>
+            <div>{{topicDetail.visit_count}} 浏览</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button primary clear small>
+            <ion-icon name='chatbubbles'></ion-icon>
+            <div>{{topicDetail.reply_count}} 评论</div>
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button primary small (click)="collect()">
+            <ion-icon name="bookmark"></ion-icon>
+            <div>收藏</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+  <div id="comment">
+    <ion-list>
+      <ion-item text-wrap *ngFor="#replie of topicDetail.replies">
+        <ion-avatar item-left>
+          <a href="#/user/{{replie.author.loginname}}">
+            <img src="{{replie.author.avatar_url|avatarPipe}}">
+          </a>
+        </ion-avatar>
+        <h2>{{replie.author.loginname}}</h2>
+        <p style="margin-top: 10px;" [innerHTML]='replie.content|linkPipe'></p>
+        <div class="reply">
+          <button (click)="replieUps(replie.id)">
+            <ion-icon name="thumbs-up"></ion-icon>赞
+          </button>
+          <button (click)="reReply(replie.id,replie.author.loginname)">
+            <ion-icon name="chatbubbles"></ion-icon>回复
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-toolbar position="bottom">
+  <ion-row light>
+
+      <ion-item>
+        <ion-input type="text" placeholder="请登录后回复" [(ngModel)]="replyData.content"
+                   [disabled]="replyData.accesstoken == ''">
+        </ion-input>
+      </ion-item>
+      <div item-right>
+        <ion-buttons end>
+          <button (click)="saveReply()" [disabled]="replyData.accesstoken == '' || replyData.content==''" royal>
+            <ion-icon name="send">
+            </ion-icon>
+          </button>
+        </ion-buttons>
+      </div>
+
+  </ion-row>
+</ion-toolbar>

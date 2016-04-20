@@ -1,0 +1,30 @@
+<ion-menu [content]="content">
+  <ion-toolbar>
+    <ion-title>栏目</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="setRootPage('all')" menuToggle>
+        <ion-icon name='home' item-left></ion-icon>
+        全部
+      </ion-item>
+      <ion-item ion-item (click)="setRootPage('share')" menuToggle>
+        <ion-icon name='share' item-left></ion-icon>
+        分享
+      </ion-item>
+      <ion-item ion-item (click)="setRootPage('ask')" menuToggle>
+        <ion-icon name='help-circle' item-left></ion-icon>
+        问答
+      </ion-item>
+      <ion-item ion-item (click)="setRootPage('job')" menuToggle>
+        <ion-icon name='bowtie' item-left></ion-icon>
+        招聘
+      </ion-item>
+      <ion-item ion-item (click)="setRootPage('bb')" menuToggle>
+        <ion-icon name='text' item-left></ion-icon>
+        吐槽
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

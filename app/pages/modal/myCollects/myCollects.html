@@ -1,0 +1,32 @@
+<ion-toolbar>
+  <ion-title>
+    收藏
+  </ion-title>
+  <ion-buttons end>
+    <button (click)="dismiss()">
+      <span primary showWhen="ios">关闭</span>
+      <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="has-header">
+  <ion-list>
+    <div *ngIf="myCollects.collect_topics.length==0" button block light>暂无收藏的话题</div>
+    <ion-item-sliding *ngFor="#topic of myCollects.collect_topics">
+      <a ion-item href="#/topicDetail/{{topic.id}}">
+        <ion-avatar item-left>
+          <img src="{{topic.author.avatar_url|avatarPipe}}">
+        </ion-avatar>
+        <h2>{{topic.title}}</h2>
+        <h3 style="margin-top: 10px" class="agotime">{{topic.last_reply_at|amTimeAgo}}</h3>
+      </a>
+      <ion-item-options>
+        <button (click)="remove(topic.id)" danger>
+          <ion-icon name="trash"></ion-icon>
+          移除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

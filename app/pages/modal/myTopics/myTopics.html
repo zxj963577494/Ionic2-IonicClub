@@ -1,0 +1,39 @@
+<ion-toolbar>
+  <ion-title>
+    收藏
+  </ion-title>
+  <ion-buttons end>
+    <button (click)="dismiss()">
+      <span primary showWhen="ios">关闭</span>
+      <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="has-header">
+  <ion-list>
+    <ion-list-header>
+      最近创建的话题
+    </ion-list-header>
+    <div *ngIf="myTopics.recent_topics.length==0" button block light>暂无创建的话题</div>
+    <a ion-item href="#/topicDetail/{{topic.id}}" *ngFor="#topic of myTopics.recent_topics">
+      <ion-avatar item-left>
+        <img src="{{topic.author.avatar_url|avatarPipe}}">
+      </ion-avatar>
+      <h2>{{topic.title}}</h2>
+      <p style="margin-top: 10px" class="agotime">{{topic.last_reply_at|amTimeAgo}}</p>
+    </a>
+
+    <ion-list-header>
+      最近参与的话题
+    </ion-list-header>
+    <div *ngIf="myTopics.recent_replies.length==0" button block light>暂无参与的话题</div>
+    <a ion-item href="#/topicDetail/{{topic.id}}" *ngFor="#topic of myTopics.recent_replies">
+      <ion-avatar item-left>
+        <img src="{{topic.author.avatar_url|avatarPipe}}">
+      </ion-avatar>
+      <h2>{{topic.title}}</h2>
+      <p class="agotime">{{topic.last_reply_at|amTimeAgo}}</p>
+    </a>
+  </ion-list>
+</ion-content>

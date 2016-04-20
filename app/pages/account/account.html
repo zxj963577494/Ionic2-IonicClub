@@ -1,0 +1,76 @@
+<ion-navbar *navbar>
+  <ion-title>个人中心</ion-title>
+</ion-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{user.avatar_url|avatarPipe}}">
+      </ion-avatar>
+      <h2>{{user.loginname}}</h2>
+      <p>积分 {{user.score}}</p>
+      <p>注册日期 {{user.create_at|amDateFormat:'YYYY-MM-DD'}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      功能
+    </ion-list-header>
+    <ion-item>
+      <ion-row text-center>
+        <ion-col>
+          <button (click)="openMyCollects()" clear>
+            <ion-icon name="bookmark"></ion-icon>
+            收藏
+          </button>
+        </ion-col>
+        <ion-col>
+          <button (click)="openMyMessages()" clear>
+            <ion-icon name="chatboxes"></ion-icon>
+            消息
+            <ion-badge danger *ngIf="hasnot_read_messages_count>0">{{hasnot_read_messages_count}}</ion-badge>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button (click)="openMyTopics()" clear>
+            <ion-icon name="chatbubbles"></ion-icon>
+            话题
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      关于
+    </ion-list-header>
+    <ion-item>
+      当前版本
+      <ion-note item-right>{{versionNumber}}</ion-note>
+    </ion-item>
+    <ion-item>
+      联系作者
+      <ion-note item-right>963577494@qq.com</ion-note>
+    </ion-item>
+    <ion-item>
+      开源地址
+      <ion-note item-right
+                onclick="window.open('https://github.com/zxj963577494/ionic2-ioniclub', '_blank', 'location=yes')">
+        ionic2-ioniclub
+      </ion-note>
+    </ion-item>
+    <ion-item onclick="window.open('http://ionichina.com/about', '_blank', 'location=no')">
+      Ionichina社区
+    </ion-item>
+    <a ion-item text-center href="#/user/zxj963577494">
+      <ion-row text-center>
+        <ion-col>
+          &copy; @zxj963577494
+        </ion-col>
+      </ion-row>
+    </a>
+    <ion-item>
+      <button block (click)="loginOut()">退出账户</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

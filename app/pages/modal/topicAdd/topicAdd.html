@@ -1,0 +1,49 @@
+<ion-toolbar>
+  <ion-title>
+    新增话题
+  </ion-title>
+  <ion-buttons end>
+    <button (click)="dismiss()">
+      <span primary showWhen="ios">关闭</span>
+      <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-qcontent>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>板块</ion-label>
+      <ion-select okText="确定" cancelText="取消" [(ngModel)]="topicData.tab">
+        <ion-option value="">请选择</ion-option>
+        <ion-option value="share">分享</ion-option>
+        <ion-option value="ask">问答</ion-option>
+        <ion-option value="job">招聘</ion-option>
+        <!--<ion-option value="bb">吐槽</ion-option>-->
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>标题</ion-label>
+      <ion-input [(ngModel)]="topicData.title" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>内容</ion-label>
+      <ion-textarea [(ngModel)]="topicData.content"></ion-textarea>
+    </ion-item>
+    <button block (click)="submit()">提交</button>
+  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      Markdown 语法参考
+    </ion-card-header>
+    <ion-card-content>
+      ### 单行的标题<p>
+      **粗体**<p>
+      `console.log('行内代码')`<p>
+      ```js\n code \n``` 标记代码块<p>
+      [内容](链接)<p>
+      ![文字说明](图片链接)<p>
+      <a href='http://www.ituring.com.cn/article/775'> Markdown 文档 </a>
+    </ion-card-content>
+  </ion-card>
+</ion-qcontent>
