@@ -125,7 +125,7 @@ export class IonicService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this.http.post(url, body, {headers: headers}).map(
-        res=>res.json().data
+        res=>res.json()
     ).catch(this.handleError);
   }
 

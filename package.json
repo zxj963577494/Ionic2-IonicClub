@@ -27,9 +27,17 @@
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-app-version",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-x-socialsharing",
+    "cordova-plugin-x-toast",
+    "phonegap-plugin-barcodescanner",
+    {
+      "locator": "https://github.com/apache/cordova-plugin-splashscreen.git",
+      "id": "cordova-plugin-splashscreen"
+    }
   ],
   "cordovaPlatforms": [
     "ios",
@@ -37,7 +45,8 @@
       "platform": "ios",
       "version": "",
       "locator": "ios"
-    }
+    },
+    "android"
   ],
   "name": "ionicclub",
   "description": "IonicClub: An Ionic project"

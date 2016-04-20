@@ -4,7 +4,6 @@ import {ConfigService} from "../../services/ConfigService";
 import {BarcodeScanner} from 'ionic-native';
 import {AccountPage} from "../account/account";
 import {AppVersion} from 'ionic-native';
-import {TopicsPage} from "../topics/topics";
 
 
 @Page({
@@ -52,23 +51,26 @@ export class LoginPage {
                     this.nav.remove(index);
                   });
                 });
-            /*BarcodeScanner.scan().then((barcodeData) => {
-             let User = {
-             accesstoken: '',
-             loginname: '',
-             avatar_url: ''
-             }
-             User.accesstoken = barcodeData.text;
-             this.ionicService.postUserLogin(User.accesstoken).subscribe(
-             data=> {
-             User.loginname = data.loginname;
-             User.avatar_url = data.avatar_url;
-             this.local.set('User', JSON.stringify(User));
-             this.nav.setRoot(AccountPage);
-             });
-             }, (err) => {
-             console.log(err);
-             });*/
+            // BarcodeScanner.scan().then((barcodeData) => {
+            //   let User = {
+            //     accesstoken: '',
+            //     loginname: '',
+            //     avatar_url: ''
+            //   }
+            //   User.accesstoken = barcodeData.text;
+            //   this.ionicService.postUserLogin(User.accesstoken).subscribe(
+            //       data=> {
+            //         User.loginname = data.loginname;
+            //         User.avatar_url = data.avatar_url;
+            //         this.local.set('User', JSON.stringify(User));
+            //         this.nav.push(AccountPage).then(()=> {
+            //           let index = this.viewCtrl.index;
+            //           this.nav.remove(index);
+            //         });
+            //       });
+            // }, (err) => {
+            //   console.log(err);
+            // });
           }
         }
       ]

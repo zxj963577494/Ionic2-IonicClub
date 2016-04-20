@@ -10,8 +10,8 @@ import {LoginPage} from "./pages/login/login";
 import {AccountPage} from "./pages/account/account";
 import {Toast} from 'ionic-native';
 import {Splashscreen} from 'ionic-native';
-import * as locales from "moment/min/locales.js";
-
+import * as moment from 'moment';
+import * as locales from 'moment/min/locales.js';
 
 @App({
   templateUrl: 'build/app.html',
@@ -38,9 +38,10 @@ export class MyApp {
   private backPressed:boolean = false;
 
   constructor(private app:IonicApp, platform:Platform, private commonService:CommonService) {
+    // 如果时间格式无法显示中文,请将node_modules/moment/min/locales.js与node_modules/moment/moment.js合并,原因是无法加载locales.js文件,知道如何引入的朋友可以在issues上发表一下.
+    moment.locale('zh-cn');
     platform.ready().then(() => {
       StatusBar.styleDefault();
-      Splashscreen.hide();
       this.registerBackButtonListener();
     });
   }

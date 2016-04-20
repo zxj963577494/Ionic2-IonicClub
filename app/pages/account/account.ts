@@ -1,4 +1,4 @@
-import {Page, NavController, Storage, LocalStorage, Modal,ViewController} from 'ionic-angular';
+import {Page, NavController, Storage, LocalStorage, Modal, ViewController, Events} from 'ionic-angular';
 import {IonicService} from "../../services/IonicService";
 import {ConfigService} from "../../services/ConfigService";
 import {MyCollectsPage} from "../modal/myCollects/myCollects";
@@ -13,13 +13,13 @@ import {TopicsPage} from "../topics/topics";
 @Page({
   templateUrl: 'build/pages/account/account.html',
   providers: [IonicService, ConfigService],
-  pipes: [AvatarPipe,DateFormatPipe]
+  pipes: [AvatarPipe, DateFormatPipe]
 })
 
 export class AccountPage {
   private local:LocalStorage;
   private versionNumber:string;
-  private hasnot_read_messages_count:number;
+  private hasnot_read_messages_count:number = 0;
   private user = {
     avatar_url: '',
     loginname: '',
@@ -38,7 +38,10 @@ export class AccountPage {
     hasnot_read_messages: []
   }
 
-  constructor(private viewCtrl:ViewController,private nav:NavController, private ionicService:IonicService) {
+  constructor(private viewCtrl:ViewController, private nav:NavController, private events:Events, private ionicService:IonicService) {
+    this.events.subscribe('badge', (data)=> {
+      this.hasnot_read_messages_count = data;
+    });
     this.local = new Storage(LocalStorage);
   }
 
@@ -66,6 +69,7 @@ export class AccountPage {
               this.user = data
               this.myTopics.recent_replies = data.recent_replies;
               this.myTopics.recent_topics = data.recent_topics;
+
             });
         this.ionicService.getMessages(user.accesstoken).subscribe(data=> {
           this.myMessages = data

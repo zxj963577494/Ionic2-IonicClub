@@ -1,4 +1,4 @@
-import {Page, NavController, NavParams, Modal, Storage, LocalStorage} from 'ionic-angular';
+import {Page, NavController, NavParams, Modal, Storage, LocalStorage, Events} from 'ionic-angular';
 import {IonicService} from "../../services/IonicService";
 import {ConfigService} from "../../services/ConfigService";
 import {TabNamePipe} from "../../pipe/TabNamePipe";
@@ -28,11 +28,13 @@ export class TopicsPage {
   };
 
   constructor(private ionicService:IonicService, private nav:NavController,
-              private navParams:NavParams) {
+              private navParams:NavParams, private events:Events) {
     if (navParams.get('tab')) {
       this.params.tab = navParams.get('tab');
     }
-    this.ionicService = ionicService;
+    this.events.subscribe('badge', (data)=> {
+      this.badge = data;
+    });
     this.local = new Storage(LocalStorage);
   }
 

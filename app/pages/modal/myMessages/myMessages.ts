@@ -1,4 +1,4 @@
-import {Page, NavParams, ViewController, Storage, LocalStorage} from 'ionic-angular';
+import {Page, NavParams, ViewController, Storage, LocalStorage, Events} from 'ionic-angular';
 import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js';
 import {DateFormatPipe} from 'angular2-moment/DateFormatPipe.js';
 import {IonicService} from "../../../services/IonicService";
@@ -18,7 +18,7 @@ export class MyMessagesPage {
     hasnot_read_messages: []
   }
 
-  constructor(private viewCtrl:ViewController, private navParams:NavParams, private ionicService:IonicService) {
+  constructor(private viewCtrl:ViewController, private navParams:NavParams, private ionicService:IonicService, private  events:Events) {
     this.local = new Storage(LocalStorage);
   }
 
@@ -27,8 +27,9 @@ export class MyMessagesPage {
     this.local.get('User').then(u=> {
       if (u) {
         let user = JSON.parse(u);
-        this.ionicService.getMessageCount(user.accesstoken).subscribe(data=> {
+        this.ionicService.postMessageMark_all(user.accesstoken).subscribe(data=> {
           if (data.success) {
+            this.events.publish('badge', 0);
             console.log("标记全部已读");
           }
         });
