@@ -37,4 +37,4 @@
 
 如果我的开源项目对你有帮助，我也不介意你要请我喝杯饮料。o(∩_∩)o 
 
-![支付宝](https://t.alipayobjects.com/images/mobilecodec/T1c0hoXeRbXXXXXXXX)
+![支付宝](https://mobilecodec.alipay.com/show.htm?code=apx00568rxgvu4eitzbme07&picSize=s)
