@@ -16,14 +16,14 @@
 
 5.ionic build android/ios
 
-## 下载地址
+# 下载地址
 --------------
 
 ![下载.png](http://7pumgf.com1.z0.glb.clouddn.com/download.png)
 
 [Android](https://fir.im/bsvd "android") / [ios(需越狱)](http://fir.im/1wzc "ios")
 
-## 下载地址
+# 项目展示
 --------------
 
 ![首页](http://firimg.fir.im/1fe6e0c323e1987b8681f79cb1f309d0cbb19edb?imageView2/0/w/426/h/240)
