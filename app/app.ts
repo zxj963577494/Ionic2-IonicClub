@@ -58,7 +58,7 @@ export class MyApp {
         setTimeout(()=>this.backPressed = false, 2000);
         return;
       }
-      // 利用 cordova.js 退出应用
+      // 利用 cordova.js 退出应用(不影响使用)
       navigator.app.exitApp();
     }, false);
   }

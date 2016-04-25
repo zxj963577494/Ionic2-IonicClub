@@ -23,6 +23,7 @@ function toQueryPair(key, value) {
   }
   return key + '=' + encodeURIComponent(value === null ? '' : String(value));
 }
+
 export function toQueryString(obj) {
   var ret = [];
   for(var key in obj){

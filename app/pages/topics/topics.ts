@@ -35,6 +35,16 @@ export class TopicsPage {
     this.events.subscribe('badge', (data)=> {
       this.badge = data;
     });
+    this.events.subscribe('doRefresh', ()=> {
+      this.params.page = 1;
+      this.params.tab = 'all';
+      this.ionicService.getTopics(this.params).subscribe(
+          data => {
+            this.topics = data;
+            this.params.page++;
+          }
+      );
+    });
     this.local = new Storage(LocalStorage);
   }
 

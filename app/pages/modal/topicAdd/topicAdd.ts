@@ -1,4 +1,4 @@
-import {Page, NavController, ViewController, Loading, Storage, LocalStorage} from 'ionic-angular';
+import {Page, NavController, ViewController, Loading, Storage, LocalStorage, Events} from 'ionic-angular';
 import {IonicService} from "../../../services/IonicService";
 import {ConfigService} from "../../../services/ConfigService";
 
@@ -16,7 +16,7 @@ export class TopicAddPage {
   }
   private local:LocalStorage;
 
-  constructor(private viewCtrl:ViewController, private nav:NavController, private ionicService:IonicService) {
+  constructor(private viewCtrl:ViewController, private nav:NavController, private ionicService:IonicService, private events:Events) {
     this.local = new Storage(LocalStorage);
   }
 
@@ -36,6 +36,7 @@ export class TopicAddPage {
     if (this.validate()) {
       this.ionicService.postTopic(this.topicData).subscribe(data=> {
         if (data.success) {
+          this.events.publish('doRefresh');
           this.loading('提交成功', 500);
           this.dismiss();
         } else {
