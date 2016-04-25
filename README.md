@@ -1,7 +1,7 @@
 # 项目介绍 
 --------------
 
-基于Ionic2的[<<Ionic中文论坛>>](http://ionichina.com/ "Ionic中文论坛")客户端，该应用也是边学边做的，为了将更多常用东西加入到APP中，有些逻辑不通之处，敬请包涵。
+基于Ionic2的[Ionic中文论坛](http://ionichina.com/ "Ionic中文论坛")客户端，该应用也是边学边做的，为了将更多常用东西加入到APP中，有些逻辑不通之处，敬请包涵。
 
 # 安装指南
 --------------
@@ -37,4 +37,4 @@
 
 如果我的开源项目对你有帮助，我也不介意你要请我喝杯饮料。o(∩_∩)o 
 
-![支付宝](https://mobilecodec.alipay.com/show.htm?code=apx00568rxgvu4eitzbme07&picSize=L)
+![支付宝](https://t.alipayobjects.com/images/mobilecodec/T1c0hoXeRbXXXXXXXX)
