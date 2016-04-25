@@ -1,15 +1,16 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
 import {IonicService} from "../../services/IonicService";
 import {ConfigService} from "../../services/ConfigService";
-import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js';
-import {DateFormatPipe} from 'angular2-moment/DateFormatPipe.js';
+import {AmTimeAgoPipe} from '../../pipe/AmTimeAgoPipe';
 import {AvatarPipe} from "../../pipe/avatarPipe";
+import {DateFormatPipe} from "../../pipe/DateFormatPipe";
+
 
 
 @Page({
   templateUrl: 'build/pages/user/user.html',
   providers: [IonicService, ConfigService],
-  pipes: [TimeAgoPipe, DateFormatPipe, AvatarPipe]
+  pipes: [AmTimeAgoPipe,DateFormatPipe, AvatarPipe]
 })
 
 export class UserPage {

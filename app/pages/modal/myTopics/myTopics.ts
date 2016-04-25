@@ -1,11 +1,12 @@
 import {Page, NavParams, ViewController} from 'ionic-angular';
-import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js';
+import {ConfigService} from "../../../services/ConfigService";
+import {AmTimeAgoPipe} from '../../../pipe/AmTimeAgoPipe';
 import {AvatarPipe} from "../../../pipe/avatarPipe";
 
 
 @Page({
   templateUrl: 'build/pages/modal/myTopics/myTopics.html',
-  pipes: [TimeAgoPipe, AvatarPipe]
+  pipes: [AmTimeAgoPipe, AvatarPipe]
 })
 
 export class MyTopicsPage {

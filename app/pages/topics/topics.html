@@ -41,7 +41,7 @@
       <h3 class="loginname" style="margin: 10px 0px 0px 8px">
         {{topic.author.loginname}}</h3>
 
-      <h3 class="agotime" style="margin-top: 10px">{{topic.last_reply_at|amTimeAgo}}</h3>
+      <h3 class="agotime" style="margin-top: 10px">{{topic.last_reply_at|amTimeAgoPipe}}</h3>
     </a>
   </ion-list>
   <ion-infinite-scroll (infinite)="doInfinite($event)">

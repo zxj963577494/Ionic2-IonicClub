@@ -1,13 +1,13 @@
 import {Page, NavParams, ViewController, Storage, LocalStorage} from 'ionic-angular';
 import {IonicService} from "../../../services/IonicService";
 import {ConfigService} from "../../../services/ConfigService";
-import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js';
+import {AmTimeAgoPipe} from '../../../pipe/AmTimeAgoPipe';
 import {AvatarPipe} from "../../../pipe/avatarPipe";
 
 @Page({
   templateUrl: 'build/pages/modal/myCollects/myCollects.html',
   providers: [IonicService, ConfigService],
-  pipes: [TimeAgoPipe, AvatarPipe]
+  pipes: [AmTimeAgoPipe, AvatarPipe]
 })
 
 export class MyCollectsPage {

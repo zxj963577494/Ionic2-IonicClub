@@ -3,7 +3,7 @@ import {IonicService} from "../../services/IonicService";
 import {ConfigService} from "../../services/ConfigService";
 import {TabNamePipe} from "../../pipe/TabNamePipe";
 import {AvatarPipe} from "../../pipe/avatarPipe";
-import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js';
+import {AmTimeAgoPipe} from '../../pipe/AmTimeAgoPipe';
 import {TopicAddPage} from "../modal/topicAdd/topicAdd";
 import {LoginPage} from "../login/login";
 import {AccountPage} from "../account/account";
@@ -11,7 +11,7 @@ import {AccountPage} from "../account/account";
 @Page({
   templateUrl: 'build/pages/topics/topics.html',
   providers: [IonicService, ConfigService],
-  pipes: [TimeAgoPipe, TabNamePipe, AvatarPipe]
+  pipes: [AmTimeAgoPipe, TabNamePipe, AvatarPipe]
 })
 
 export class TopicsPage {

@@ -1,7 +1,7 @@
 import {Page, Loading, NavController, NavParams, Storage, LocalStorage} from "ionic-angular";
 import {IonicService} from "../../services/IonicService";
 import {ConfigService} from "../../services/ConfigService";
-import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js'
+import {AmTimeAgoPipe} from '../../pipe/AmTimeAgoPipe';
 import {AvatarPipe} from "../../pipe/avatarPipe";
 import {LinkPipe} from "../../pipe/linkPipe";
 import {SocialSharing} from 'ionic-native';
@@ -9,7 +9,7 @@ import {SocialSharing} from 'ionic-native';
 @Page({
   templateUrl: 'build/pages/topicDetail/topicDetail.html',
   providers: [IonicService, ConfigService],
-  pipes: [TimeAgoPipe, LinkPipe, AvatarPipe]
+  pipes: [AmTimeAgoPipe, LinkPipe, AvatarPipe]
 })
 
 export class TopicDetailPage {

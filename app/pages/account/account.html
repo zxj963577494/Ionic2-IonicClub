@@ -9,7 +9,7 @@
       </ion-avatar>
       <h2>{{user.loginname}}</h2>
       <p>积分 {{user.score}}</p>
-      <p>注册日期 {{user.create_at|amDateFormat:'YYYY-MM-DD'}}</p>
+      <p>注册日期 {{user.create_at|dateFormatPipe:'yyyy-MM-dd'}}</p>
     </ion-item>
   </ion-list>
   <ion-list>

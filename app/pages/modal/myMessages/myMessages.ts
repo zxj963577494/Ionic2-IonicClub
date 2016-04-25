@@ -1,14 +1,11 @@
 import {Page, NavParams, ViewController, Storage, LocalStorage, Events} from 'ionic-angular';
-import {TimeAgoPipe} from 'angular2-moment/TimeAgoPipe.js';
-import {DateFormatPipe} from 'angular2-moment/DateFormatPipe.js';
 import {IonicService} from "../../../services/IonicService";
 import {ConfigService} from "../../../services/ConfigService";
 
 
 @Page({
   templateUrl: 'build/pages/modal/myMessages/myMessages.html',
-  providers: [IonicService, ConfigService],
-  pipes: [TimeAgoPipe, DateFormatPipe]
+  providers: [IonicService, ConfigService]
 })
 
 export class MyMessagesPage {

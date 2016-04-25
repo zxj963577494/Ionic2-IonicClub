@@ -16,8 +16,6 @@ export class LoginPage {
   private versionNumber;
 
   constructor(private viewCtrl:ViewController, private nav:NavController, private ionicService:IonicService) {
-    this.nav = nav;
-    this.ionicService = ionicService;
     this.local = new Storage(LocalStorage);
   }
 
@@ -35,42 +33,26 @@ export class LoginPage {
         {
           text: '我知道了',
           handler: () => {
-            let User = {
-              accesstoken: '',
-              loginname: '',
-              avatar_url: ''
-            }
-            User.accesstoken = 'fc41a9eb-0b89-4c7c-a12e-fc34dc18ee61';
-            this.ionicService.postUserLogin(User.accesstoken).subscribe(
-                data=> {
-                  User.loginname = data.loginname;
-                  User.avatar_url = data.avatar_url;
-                  this.local.set('User', JSON.stringify(User));
-                  this.nav.push(AccountPage).then(()=> {
-                    let index = this.viewCtrl.index;
-                    this.nav.remove(index);
+            BarcodeScanner.scan().then((barcodeData) => {
+              let User = {
+                accesstoken: '',
+                loginname: '',
+                avatar_url: ''
+              }
+              User.accesstoken = barcodeData.text;
+              this.ionicService.postUserLogin(User.accesstoken).subscribe(
+                  data=> {
+                    User.loginname = data.loginname;
+                    User.avatar_url = data.avatar_url;
+                    this.local.set('User', JSON.stringify(User));
+                    this.nav.push(AccountPage).then(()=> {
+                      let index = this.viewCtrl.index;
+                      this.nav.remove(index);
+                    });
                   });
-                });
-            // BarcodeScanner.scan().then((barcodeData) => {
-            //   let User = {
-            //     accesstoken: '',
-            //     loginname: '',
-            //     avatar_url: ''
-            //   }
-            //   User.accesstoken = barcodeData.text;
-            //   this.ionicService.postUserLogin(User.accesstoken).subscribe(
-            //       data=> {
-            //         User.loginname = data.loginname;
-            //         User.avatar_url = data.avatar_url;
-            //         this.local.set('User', JSON.stringify(User));
-            //         this.nav.push(AccountPage).then(()=> {
-            //           let index = this.viewCtrl.index;
-            //           this.nav.remove(index);
-            //         });
-            //       });
-            // }, (err) => {
-            //   console.log(err);
-            // });
+            }, (err) => {
+              console.log(err);
+            });
           }
         }
       ]

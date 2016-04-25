@@ -6,8 +6,8 @@ import {AvatarPipe} from "../../pipe/avatarPipe";
 import {MyTopicsPage} from "../modal/myTopics/myTopics";
 import {MyMessagesPage} from "../modal/myMessages/myMessages";
 import {AppVersion} from 'ionic-native';
-import {DateFormatPipe} from 'angular2-moment/DateFormatPipe.js';
 import {TopicsPage} from "../topics/topics";
+import {DateFormatPipe} from "../../pipe/DateFormatPipe";
 
 
 @Page({

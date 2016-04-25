@@ -21,7 +21,7 @@
         <img src="{{topic.author.avatar_url|avatarPipe}}">
       </ion-avatar>
       <h2>{{topic.title}}</h2>
-      <p style="margin-top: 10px" class="agotime">{{topic.last_reply_at|amTimeAgo}}</p>
+      <p style="margin-top: 10px" class="agotime">{{topic.last_reply_at|amTimeAgoPipe}}</p>
     </a>
 
     <ion-list-header>
@@ -33,7 +33,7 @@
         <img src="{{topic.author.avatar_url|avatarPipe}}">
       </ion-avatar>
       <h2>{{topic.title}}</h2>
-      <p class="agotime">{{topic.last_reply_at|amTimeAgo}}</p>
+      <p class="agotime">{{topic.last_reply_at|amTimeAgoPipe}}</p>
     </a>
   </ion-list>
 </ion-content>

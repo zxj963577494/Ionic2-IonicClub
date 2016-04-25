@@ -19,7 +19,7 @@
           <img src="{{topic.author.avatar_url|avatarPipe}}">
         </ion-avatar>
         <h2>{{topic.title}}</h2>
-        <h3 style="margin-top: 10px" class="agotime">{{topic.last_reply_at|amTimeAgo}}</h3>
+        <h3 style="margin-top: 10px" class="agotime">{{topic.last_reply_at|amTimeAgoPipe}}</h3>
       </a>
       <ion-item-options>
         <button (click)="remove(topic.id)" danger>

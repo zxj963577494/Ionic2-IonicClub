@@ -17,7 +17,7 @@
           </a>
         </ion-avatar>
         <h2>{{topicDetail.author.loginname}}</h2>
-        <p>发布 <span>{{topicDetail.create_at|amTimeAgo}}</span> 最后回复 <span>{{topicDetail.last_reply_at|amTimeAgo}}</span></p>
+        <p>发布 <span>{{topicDetail.create_at|amTimeAgoPipe}}</span> 最后回复 <span>{{topicDetail.last_reply_at|amTimeAgoPipe}}</span></p>
       </ion-item>
       <ion-card-content>
         <div [innerHTML]="topicDetail.content| linkPipe"></div>
