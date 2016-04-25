@@ -1,7 +1,7 @@
 # 项目介绍 
 --------------
 
-基于Ionic2的&lt;&lt;Ionic中文论坛>>客户端，该应用也是边学边做的，为了将更多常用东西加入到APP中，有些逻辑不通之处，敬请包涵。
+基于Ionic2的[<<Ionic中文论坛>>](http://ionichina.com/ "Ionic中文论坛")客户端，该应用也是边学边做的，为了将更多常用东西加入到APP中，有些逻辑不通之处，敬请包涵。
 
 # 安装指南
 --------------
@@ -32,5 +32,9 @@
 ![个人中心](http://firimg.fir.im/a4190cf154df6554eafba9093dcf251069da2a2a?imageView2/0/w/426/h/240)
 ![个人信息](http://firimg.fir.im/3f41a638617f480a24f879f993225fdfa29a32cd?imageView2/0/w/426/h/240)
 
+## 写在最后
+--------------
 
+如果我的开源项目对你有帮助，我也不介意你要请我喝杯饮料。o(∩_∩)o 
 
+![支付宝](https://mobilecodec.alipay.com/show.htm?code=apx00568rxgvu4eitzbme07&picSize=L)
