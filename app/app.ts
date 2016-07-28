@@ -59,7 +59,7 @@ export class MyApp {
         return;
       }
       // 利用 cordova.js 退出应用(不影响使用)
-      navigator.app.exitApp();
+      // navigator.app.exitApp();
     }, false);
   }
 
