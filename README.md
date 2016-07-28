@@ -6,6 +6,8 @@
 # 安装指南
 --------------
 
+请先确定已经安装 npm install -g ionic@beta
+
 1.git clone https://github.com/zxj963577494/Ionic2-IonicClub.git
 
 2.cd Ionic2-IonicClub
@@ -15,6 +17,21 @@
 4.ionic platform add android/ios
 
 5.ionic build android/ios
+
+# 在浏览器中查看
+--------------
+
+请先确定已经安装 npm install -g ionic@beta
+
+1.git clone https://github.com/zxj963577494/Ionic2-IonicClub.git
+
+2.cd Ionic2-IonicClub
+
+3.npm install
+
+4.ionic serve
+
+注：如果没有效果，请先运行gulp build, 再运行ionic serve
 
 # 下载地址
 --------------
