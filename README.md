@@ -48,10 +48,3 @@
 ![评论](http://firimg.fir.im/a7844d87ac424b6d34ba092df5a4840e1e6e93d6?imageView2/0/w/426/h/240)
 ![个人中心](http://firimg.fir.im/a4190cf154df6554eafba9093dcf251069da2a2a?imageView2/0/w/426/h/240)
 ![个人信息](http://firimg.fir.im/3f41a638617f480a24f879f993225fdfa29a32cd?imageView2/0/w/426/h/240)
-
-## 写在最后
---------------
-
-如果我的开源项目对你有帮助，我也不介意你要请我喝杯饮料。o(∩_∩)o 
-
-![支付宝](https://mobilecodec.alipay.com/show.htm?code=apx00568rxgvu4eitzbme07&picSize=s)
