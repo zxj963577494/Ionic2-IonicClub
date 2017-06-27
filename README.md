@@ -1,6 +1,6 @@
 # 注意
 --------------
-建议查看Ionic 3.4.2 + Angular 4 + TypeScript 2.3 制作的[CNode中文论坛](https://cnodejs.org/ "CNode中文论坛")客户端。
+建议查看Ionic 3.4.2 + Angular 4 + TypeScript 2.3 制作的[CNode中文论坛](https://github.com/zxj963577494/Ionic2-CNodeClub "CNode中文论坛")客户端。
 
 # 项目介绍 
 --------------
